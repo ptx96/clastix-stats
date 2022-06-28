@@ -1,5 +1,4 @@
-## docker-compose.yml ##
-
+---
 version: '3'
 
 volumes:
@@ -17,7 +16,8 @@ services:
     command:
       - '--config.file=/etc/alertmanager/alertmanager.conf'
     ports:
-      - 9093:9093
+      - "9093:9093"
+    restart: unless-stopped
 
   prometheus:
     container_name: prometheus
@@ -31,9 +31,11 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     links:
       - alertmanager:alertmanager
-      - metrics:metrics
+      - docker-hub-metrics:docker-hub-metrics
+      - github-metrics:github-metrics
     ports:
-      - 9090:9090
+      - "9090:9090"
+    restart: on-failure
 
   grafana:
     container_name: grafana
@@ -44,13 +46,32 @@ services:
       - ./grafana_config.ini:/etc/grafana/config.ini
       - grafana_data:/var/lib/grafana
     ports:
-      - 3000:3000
+      - "3000:3000"
+    restart: on-failure
 
-  metrics:
+  docker-hub-metrics:
+    container_name: docker-hub-metrics
+    hostname: docker-hub-metrics
     image: artemkaxboy/docker-hub-exporter
     environment:
-   #   IMAGES: "clastix/capsule,clastix/kamaji,clastix/kubectl"
+    #  IMAGES: "clastix/capsule,clastix/kamaji,clastix/kubectl"
       NAMESPACES: "clastix"
     ports:
       - "9170:9170"
     restart: unless-stopped
+
+  github-metrics:
+    container_name: github-metrics
+    hostname: github-metrics
+    image: infinityworks/github-exporter:latest
+    environment:
+    #  REPOS: <REPOS you want to monitor>
+      ORGS: "clastix"
+    #  GITHUB_TOKEN: <your github api token>
+    ports:
+      - "9171:9171"
+    #expose:
+    #  - 9171
+    restart: unless-stopped
+    #tty: true
+    #stdin_open: true

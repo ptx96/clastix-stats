@@ -23,4 +23,10 @@ scrape_configs:
     metrics_path: '/metrics'
     scrape_interval: 5s
     static_configs:
-         - targets: ['metrics:9170']
+         - targets: ['docker-hub-metrics:9170']
+
+  - job_name: 'github-metrics'
+    metrics_path: '/metrics'
+    scrape_interval: 5m
+    static_configs:
+         - targets: ['github-metrics:9171']
