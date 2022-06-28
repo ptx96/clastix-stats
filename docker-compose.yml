@@ -32,7 +32,6 @@ services:
     links:
       - alertmanager:alertmanager
       - docker-hub-metrics:docker-hub-metrics
-      - github-metrics:github-metrics
     ports:
       - "9090:9090"
     restart: on-failure
@@ -60,19 +59,3 @@ services:
     ports:
       - "9170:9170"
     restart: unless-stopped
-
-  github-metrics:
-    container_name: github-metrics
-    hostname: github-metrics
-    image: infinityworks/github-exporter:latest
-    environment:
-    #  REPOS: <REPOS you want to monitor>
-      ORGS: "clastix"
-    #  GITHUB_TOKEN: <your github api token>
-    ports:
-      - "9171:9171"
-    #expose:
-    #  - 9171
-    restart: unless-stopped
-    #tty: true
-    #stdin_open: true
