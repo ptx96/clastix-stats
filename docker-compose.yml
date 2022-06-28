@@ -45,6 +45,7 @@ services:
       - ./grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
       - ./grafana_config.ini:/etc/grafana/config.ini
       - grafana_data:/var/lib/grafana
+      - ./plugins:/var/lib/grafana/plugins
     ports:
       - "3000:3000"
     restart: on-failure
