@@ -1,5 +1,4 @@
-## grafana_datasources.yml ##
-
+---
 apiVersion: 1
 
 datasources:
@@ -7,3 +6,11 @@ datasources:
     type: 'prometheus'
     access: 'proxy'
     url: 'http://prometheus:9090'
+
+  - name: 'GitHub Repo Insights'
+    type: 'grafana-github-datasource'
+    #jsonData:
+    #  owner: "clastix"
+    #  repository: "capsule"
+    #secureJsonData:
+    #  accessToken: <add here your access token>

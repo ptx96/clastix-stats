@@ -1,5 +1,4 @@
-## docker-compose.yml ##
-
+---
 version: '3'
 
 volumes:
@@ -17,7 +16,8 @@ services:
     command:
       - '--config.file=/etc/alertmanager/alertmanager.conf'
     ports:
-      - 9093:9093
+      - "9093:9093"
+    restart: unless-stopped
 
   prometheus:
     container_name: prometheus
@@ -31,9 +31,10 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     links:
       - alertmanager:alertmanager
-      - metrics:metrics
+      - docker-hub-metrics:docker-hub-metrics
     ports:
-      - 9090:9090
+      - "9090:9090"
+    restart: on-failure
 
   grafana:
     container_name: grafana
@@ -43,13 +44,17 @@ services:
       - ./grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
       - ./grafana_config.ini:/etc/grafana/config.ini
       - grafana_data:/var/lib/grafana
+      - ./plugins:/var/lib/grafana/plugins
     ports:
-      - 3000:3000
+      - "3000:3000"
+    restart: on-failure
 
-  metrics:
+  docker-hub-metrics:
+    container_name: docker-hub-metrics
+    hostname: docker-hub-metrics
     image: artemkaxboy/docker-hub-exporter
     environment:
-   #   IMAGES: "clastix/capsule,clastix/kamaji,clastix/kubectl"
+    #  IMAGES: "clastix/capsule,clastix/kamaji,clastix/kubectl"
       NAMESPACES: "clastix"
     ports:
       - "9170:9170"
