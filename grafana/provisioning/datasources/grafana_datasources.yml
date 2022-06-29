@@ -8,7 +8,7 @@ datasources:
     access: 'proxy'
     url: 'http://prometheus:9090'
 
-  - name: 'github'
+  - name: GitHub Repo Insights
     type: grafana-github-datasource
     #jsonData:
     #    owner: ""
