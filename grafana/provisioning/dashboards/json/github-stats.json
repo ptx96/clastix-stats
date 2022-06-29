@@ -96,8 +96,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 14000,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1656465622407,
+  "id": 2,
+  "iteration": 1656466327857,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1199,8 +1199,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1305,8 +1304,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1395,8 +1393,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1459,8 +1456,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1526,8 +1522,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1601,8 +1596,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1687,6 +1681,9 @@
           "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Repositories",
+        "error": {
+          "message": "Datasource ${DS_GITHUB} was not found"
+        },
         "hide": 0,
         "includeAll": false,
         "label": "Repository",
@@ -1720,6 +1717,9 @@
           "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Labels",
+        "error": {
+          "message": "Datasource ${DS_GITHUB} was not found"
+        },
         "hide": 0,
         "includeAll": true,
         "label": "Labels",
@@ -1775,6 +1775,9 @@
           "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Milestones",
+        "error": {
+          "message": "Datasource ${DS_GITHUB} was not found"
+        },
         "hide": 0,
         "includeAll": true,
         "label": "Milestone",
@@ -1798,9 +1801,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": "github",
-          "value": "github"
+          "selected": false,
+          "text": "GitHub Repo Insights",
+          "value": "GitHub Repo Insights"
         },
         "hide": 0,
         "includeAll": false,
@@ -1837,6 +1840,6 @@
   "timezone": "",
   "title": "GitHub Default",
   "uid": "iVcSTeyGz",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
