@@ -41,10 +41,11 @@ services:
     hostname: grafana
     image: grafana/grafana
     volumes:
-      - ./grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
-      - ./grafana_config.ini:/etc/grafana/config.ini
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/config.ini:/etc/grafana/config.ini
+      - ./grafana/plugins:/var/lib/grafana/plugins
       - grafana_data:/var/lib/grafana
-      - ./plugins:/var/lib/grafana/plugins
     ports:
       - "3000:3000"
     restart: on-failure
