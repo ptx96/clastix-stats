@@ -1,4 +1,41 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_GITHUB_REPO INSIGHTS",
+      "label": "GitHub Repo Insights",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "grafana-github-datasource",
+      "pluginName": "GitHub"
+    }
+  ],
+  "__elements": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.0.1"
+    },
+    {
+      "type": "datasource",
+      "id": "grafana-github-datasource",
+      "name": "GitHub",
+      "version": "1.0.15"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -96,8 +133,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 14000,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1656466327857,
+  "id": null,
+  "iteration": 1656466682086,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1199,7 +1236,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1304,7 +1342,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1393,7 +1432,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1456,7 +1496,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1522,7 +1563,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1596,7 +1638,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1662,8 +1705,8 @@
         "options": [
           {
             "selected": true,
-            "text": "grafana",
-            "value": "grafana"
+            "text": "clastix",
+            "value": "clastix"
           }
         ],
         "query": "clastix",
@@ -1671,19 +1714,12 @@
         "type": "textbox"
       },
       {
-        "current": {
-          "selected": false,
-          "text": "capsule",
-          "value": "capsule"
-        },
+        "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB}"
+          "uid": "${DS_GITHUB_REPO INSIGHTS}"
         },
         "definition": "GitHub - Repositories",
-        "error": {
-          "message": "Datasource ${DS_GITHUB} was not found"
-        },
         "hide": 0,
         "includeAll": false,
         "label": "Repository",
@@ -1707,19 +1743,12 @@
       },
       {
         "allValue": "",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB}"
+          "uid": "${DS_GITHUB_REPO INSIGHTS}"
         },
         "definition": "GitHub - Labels",
-        "error": {
-          "message": "Datasource ${DS_GITHUB} was not found"
-        },
         "hide": 0,
         "includeAll": true,
         "label": "Labels",
@@ -1765,19 +1794,12 @@
         "type": "custom"
       },
       {
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB}"
+          "uid": "${DS_GITHUB_REPO INSIGHTS}"
         },
         "definition": "GitHub - Milestones",
-        "error": {
-          "message": "Datasource ${DS_GITHUB} was not found"
-        },
         "hide": 0,
         "includeAll": true,
         "label": "Milestone",
@@ -1801,7 +1823,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "GitHub Repo Insights",
           "value": "GitHub Repo Insights"
         },
@@ -1809,6 +1831,24 @@
         "includeAll": false,
         "multi": false,
         "name": "datasource",
+        "options": [],
+        "query": "grafana-github-datasource",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "GitHub Repo Insights",
+          "value": "GitHub Repo Insights"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "DS_GITHUB",
         "options": [],
         "query": "grafana-github-datasource",
         "queryValue": "",
