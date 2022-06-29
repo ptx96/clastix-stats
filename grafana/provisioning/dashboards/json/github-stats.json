@@ -1,7 +1,7 @@
 {
   "__inputs": [
     {
-      "name": "DS_GITHUB_REPO INSIGHTS",
+      "name": "DS_GITHUB",
       "label": "GitHub Repo Insights",
       "description": "",
       "type": "datasource",
@@ -1717,7 +1717,7 @@
         "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB_REPO INSIGHTS}"
+          "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Repositories",
         "hide": 0,
@@ -1746,7 +1746,7 @@
         "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB_REPO INSIGHTS}"
+          "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Labels",
         "hide": 0,
@@ -1797,7 +1797,7 @@
         "current": {},
         "datasource": {
           "type": "grafana-github-datasource",
-          "uid": "${DS_GITHUB_REPO INSIGHTS}"
+          "uid": "${DS_GITHUB}"
         },
         "definition": "GitHub - Milestones",
         "hide": 0,
