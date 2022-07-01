@@ -46,7 +46,6 @@ services:
       - ./grafana/config.ini:/etc/grafana/config.ini
       - ./grafana/plugins:/var/lib/grafana/plugins
       - grafana_data:/var/lib/grafana
-      - ./plugins:/var/lib/grafana/plugins
     ports:
       - "3000:3000"
     restart: on-failure
